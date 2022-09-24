@@ -22,7 +22,7 @@ jobs:
     # runs-on: self-hosted
     runs-on: ubuntu-latest
     needs: run-tests
-    # if: github.ref == 'refs/heads/master'
+    if: github.ref == 'refs/heads/master'
     steps:
       - uses: actions/checkout@v3
       - run: docker build . --file Dockerfile --tag ledangkhoalt/cicd-practicing:${GITHUB_SHA}
